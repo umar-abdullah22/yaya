@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import UsuariosPantallaDeInicio from './screens/usuarious/UsuariosPantallaDeInicio';
-import AcademicOffers from './screens/academic/AcademicOffers';
-import SingleWordAccordion from './screens/singleWord/SingleWordAccordion';
-import AboutUs from './screens/about/AboutUs';
-import PalabraSingleWord from './screens/palabra/PlabraSingleWord';
-import BusquedaDePalabras from './screens/busqueda/BuquedaDePalabras';
+import UsuariosPantallaDeInicio from '@screens/usuarious/UsuariosPantallaDeInicio';
+import AcademicOffers from '@screens/academic/AcademicOffers';
+import SingleWordAccordion from '@screens/singleWord/SingleWordAccordion';
+import AboutUs from '@screens/about/AboutUs';
+import PalabraSingleWord from '@screens/palabra/PlabraSingleWord';
+import BusquedaDePalabras from '@screens/busqueda/BuquedaDePalabras';
 import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { IconRegistry, ApplicationProvider } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
