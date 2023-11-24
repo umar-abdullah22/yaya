@@ -2,104 +2,103 @@ import { StyleSheet } from 'react-native';
 import { FontFamily, Color } from '../GlobalStyles';
 
 export const styles = StyleSheet.create({
-  buttonAboutUsBtn: {
-    color: '#000',
-    fontSize: 16,
+  usuariosPantallaDeInicio: {
+    backgroundColor: Color.colorWhite,
+    maxWidth: 480,
+    height: "100%",
+    overflow: 'hidden',
+    width: '100%',
+  },
+  mainHeaderWithLogo: {
+    height: "50%",
+  },
+  heroImage: {
+    height: '100%',
+  },
+  heroImageGradient: {
+    position: 'relative',
+  },
+  headerLinearGradient: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    zIndex: 1,
+  },
+  image1Icon: {
+    position: 'absolute',
+    top: 30,
+    left: 10,
+    width: 92,
+    height: 34,
+  },
+  buttonpalabras: {
+    marginTop: 40,
+    width: '80%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    borderRadius: 9,
+    height: 60,
+    backgroundColor: '#083649',
+  },
+  buttonPalabrasLabel: {
+    color: '#fff',
+    fontSize: 28,
+    marginTop: 11,
+    marginBottom: 11,
     fontWeight: '600',
     fontFamily: 'Inter-SemiBold',
+    textTransform: 'capitalize',
   },
-  buttonAboutUsBtn1: {
-
+  buttonPalabrasContent: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    textAlign: 'center',
   },
-  buttonAboutUsBtn2: {},
-  buttonPalabrasBtn: {
+  buttonOfertas: {
+    marginTop: 20,
+    width: '80%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    borderRadius: 9,
+    height: 60,
+    backgroundColor: '#237298',
+  },
+  buttonOfertasLabel: {
     color: '#fff',
+    fontSize: 28,
+    marginTop: 11,
+    marginBottom: 11,
+    fontWeight: '600',
+    fontFamily: 'Inter-SemiBold',
+    textTransform: 'capitalize',
+  },
+  buttonOfertasContent: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    textAlign: 'center',
+  },
+  buttonAboutUsBtn: {
+    color: '#000',
     fontSize: 22,
     fontWeight: '600',
     fontFamily: 'Inter-SemiBold',
   },
-  buttonPalabrasBtn1: {
-    borderRadius: 9,
-    height: 44,
-    width: 250,
+  buttonAboutUsBtn1: {
+    marginTop: 20,
+    width: '40%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
-  buttonOfertasText: {
-    fontWeight: '600',
-    fontFamily: 'Inter-SemiBold',
-  },
-  logoLayout: {
-    height: 290,
-    width: 320,
-  },
-  tainosInTheRiver1IconPosition: {
-    width: 500,
-  },
-  buttonofertasPosition: {
-    overflow: 'hidden',
-  },
-  frameLayout: {
-    width: 348,
-  },
-  frameItemPosition: {
-    display: 'none',
-    position: 'absolute',
-  },
-  tainosInTheRiver1Icon: {
-    height: '100%',
-    maxWidth: '100%',
-    maxHeight: '100%',
-    overflow: 'hidden',
-  },
-  mainheaderbackgroundChild: {
-    height: '99.31%',
-    backgroundColor: 'transparent',
-  },
-  headerLogo: {
-
-  },
-  image1Icon: {
-    width: 92,
-    height: 34,
-  },
-  heroLogo: {
-    width: 430,
-
-  },
-  mainHeaderWithLogo: {
-    width: 430,
-    height: 314,
-    overflow: 'hidden',
-  },
-  buttonpalabras: {
-  },
-  buttonofertas: {
-    borderRadius: 9,
-    width: 250,
-    height: 44,
-  },
-  frameChild: {
-    backgroundColor: '#083549',
-    height: 59,
-  },
-  frameItem: {
-    backgroundColor: '#d9d9d9',
-    width: 267,
-    height: 40,
-  },
-  anuncioDeGoogle: {
-    fontSize: 12,
-    fontFamily: FontFamily.interRegular,
-    color: '#000',
-    textAlign: 'left',
+  buttonAboutUsBtn2: {
   },
   frame: {
-    height: 90,
-    overflow: 'hidden',
-  },
-  usuariosPantallaDeInicio: {
-    backgroundColor: Color.colorWhite,
-    height: 568,
-    overflow: 'hidden',
     width: '100%',
+    position: 'absolute',
+    bottom: 0,
+  },
+  frameChild: {
+    backgroundColor: '#083649',
+    height: 30,
   },
 });
