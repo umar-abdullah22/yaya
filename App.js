@@ -11,7 +11,7 @@ import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { IconRegistry, ApplicationProvider } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -54,6 +54,7 @@ const App = () => {
 
   return (
     <>
+      <StatusBar hidden={true} />
       <IconRegistry icons={[MaterialIconsPack]} />
       <ApplicationProvider {...eva} theme={eva.light}>
         <NavigationContainer>
