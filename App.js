@@ -59,7 +59,7 @@ const App = () => {
         <NavigationContainer>
           {hideSplashScreen ? (
             <Stack.Navigator
-              initialRouteName="BusquedaDePalabras"
+              initialRouteName="UsuariosPantallaDeInicio"
               screenOptions={{ headerShown: false }}
             >
               <Stack.Screen

@@ -13,7 +13,7 @@ const UsuariosPantallaDeInicio = () => {
       <RNEButton
         title="Sobre YAYA"
         radius="5"
-        iconPosition="left"
+        iconPosition="center"
         type="clear"
         color="#000"
         titleStyle={styles.buttonAboutUsBtn}
