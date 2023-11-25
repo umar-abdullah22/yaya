@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
     width: '92%',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
   },
   image1Icon: {
