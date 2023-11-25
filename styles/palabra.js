@@ -68,25 +68,31 @@ export const styles = StyleSheet.create({
   componentacordionlist: {
     marginTop: 8,
     width: '100%',
-    overflow: 'scroll',
+    height: '30%',
     marginLeft: 'auto',
     marginRight: 'auto',
+    zIndex: -3,
     
+  },
+  midSection:{
+    height: '44%',
   },
   acordionCardLayout: {
     marginTop: 8,
     minHeight: 35,
     width: 320,
+    paddingVertical: 10,
     marginLeft: 'auto',
     marginRight: 'auto',
-  },
-  paLaBraTypo1: {
+    paddingLeft: 40,
     borderTopWidth: 1,
     borderLeftWidth: 1,
     borderRightWidth: 1,
     borderBottomWidth: 3,
     borderColor: '#BCB0B0',
     borderStyle: 'solid',
+  },
+  paLaBraTypo1: {
     fontFamily: FontFamily.interSemiBold,
     fontWeight: '600',
   },

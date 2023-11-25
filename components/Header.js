@@ -51,7 +51,7 @@ const Header = ({ style }) => {
 const styles = StyleSheet.create({
 
   mainHeaderWithLogo: {
-    height: "30%",
+    height: 240,
   },
   heroImage: {
     height: 240,

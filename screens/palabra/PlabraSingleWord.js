@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { styles } from '../../styles/palabra';
 import Header from '../../components/Header';
 import { Button, List } from 'react-native-paper';
@@ -58,98 +58,214 @@ const PalabraSingleWord = () => {
           />
         </View>
       </View>
-      <View
-        style={styles.componentacordionlist}>
-        <View
-          style={styles.acordionCardLayout}
-        >
-          <List.Accordion
-            style={styles.paLaBraTypo1}
-            title="SinÃģnimo y AntÃģnimo"
-            titleStyle={{}}
-            expanded={acordionCardElementSingleWIsExpanded}
-            onPress={() =>
-              setAcordionCardElementSingleWIsExpanded(
-                !acordionCardElementSingleWIsExpanded
-              )
-            }
-          />
-        </View>
-        <View
-          style={styles.acordionCardLayout}
-        >
-          <List.Accordion
-            style={styles.paLaBraTypo1}
-            title="Uso coloquial o regional"
-            titleStyle={{}}
-            expanded={acordionCardElementSingleW1IsExpanded}
-            onPress={() =>
-              setAcordionCardElementSingleW1IsExpanded(
-                !acordionCardElementSingleW1IsExpanded
-              )
-            }
-          />
-        </View>
-        <View
-          style={styles.acordionCardLayout}
-        >
-          <List.Accordion
-            style={styles.paLaBraTypo1}
-            title="EtimologÃ­a"
-            titleStyle={{}}
-            expanded={acordionCardElementSingleW2IsExpanded}
-            onPress={() =>
-              setAcordionCardElementSingleW2IsExpanded(
-                !acordionCardElementSingleW2IsExpanded
-              )
-            }
-          />
-        </View>
-        <View
-          style={styles.acordionCardLayout}
-        >
-          <List.Accordion
-            style={styles.paLaBraTypo1}
-            title="Significado connotativo"
-            titleStyle={{}}
-            expanded={acordionCardElementSingleW3IsExpanded}
-            onPress={() =>
-              setAcordionCardElementSingleW3IsExpanded(
-                !acordionCardElementSingleW3IsExpanded
-              )
-            }
-          />
-        </View>
-        <View
-          style={styles.acordionCardLayout}
-        >
-          <List.Accordion
-            style={styles.paLaBraTypo1}
-            title="Significado denotativo"
-            titleStyle={{}}
-            expanded={acordionCardElementSingleW4IsExpanded}
-            onPress={() =>
-              setAcordionCardElementSingleW4IsExpanded(
-                !acordionCardElementSingleW4IsExpanded
-              )
-            }
-          />
-        </View>
-        <View
-          style={styles.acordionCardLayout}
-        >
-          <List.Accordion
-            style={styles.paLaBraTypo1}
-            title="CategorÃ­a gramatical"
-            titleStyle={{}}
-            expanded={acordionCardElementSingleW5IsExpanded}
-            onPress={() =>
-              setAcordionCardElementSingleW5IsExpanded(
-                !acordionCardElementSingleW5IsExpanded
-              )
-            }
-          />
-        </View>
+      <View style={styles.midSection}>
+        <ScrollView
+          style={styles.componentacordionlist}>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                SinÃģnimo y AntÃģnimo
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                Uso coloquial o regional
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                SinÃģnimo y AntÃģnimo
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                Uso coloquial o regional
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                SinÃģnimo y AntÃģnimo
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                Uso coloquial o regional
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                SinÃģnimo y AntÃģnimo
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                Uso coloquial o regional
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                SinÃģnimo y AntÃģnimo
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                Uso coloquial o regional
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                SinÃģnimo y AntÃģnimo
+              </Text>
+            </View>
+          </View>
+          <View
+            style={styles.acordionCardLayout}
+          >
+            <View
+              style={styles.paLaBraTypo1}
+              expanded={acordionCardElementSingleW5IsExpanded}
+              onPress={() =>
+                setAcordionCardElementSingleW1IsExpanded(
+                  !acordionCardElementSingleW1IsExpanded
+                )
+              }
+            >
+              <Text>
+                Uso coloquial o regional
+              </Text>
+            </View>
+          </View>
+        </ScrollView>
       </View>
       <Footer />
     </View>
