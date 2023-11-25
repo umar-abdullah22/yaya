@@ -6,8 +6,7 @@ import { Button, List } from 'react-native-paper';
 import { Image } from 'expo-image';
 import Footer from '../../components/Footer';
 
-
-const PalabraSingleWord = () => {
+const PalabraSingleWord = ({ navigation }) => {
   const [
     acordionCardElementSingleWIsExpanded,
     setAcordionCardElementSingleWIsExpanded,
@@ -35,14 +34,12 @@ const PalabraSingleWord = () => {
 
   return (
     <View style={styles.palabraSingleWord}>
-      <Header />
+      <Header navigation={navigation} />
       <Text style={styles.tittleSelectedWord}>Tittle Selected Word</Text>
       <View style={styles.breakLine}></View>
       <View style={styles.voiceWord}>
         <View style={styles.pronunciarRow}>
-          <Text style={styles.pronunciarStyling}>
-            Pronunciar
-          </Text>
+          <Text style={styles.pronunciarStyling}>Pronunciar</Text>
           <Image
             style={styles.voiceIcon}
             contentFit="cover"
@@ -59,11 +56,8 @@ const PalabraSingleWord = () => {
         </View>
       </View>
       <View style={styles.midSection}>
-        <ScrollView
-          style={styles.componentacordionlist}>
-          <View
-            style={styles.acordionCardLayout}
-          >
+        <ScrollView style={styles.componentacordionlist}>
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -73,14 +67,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                SinÃģnimo y AntÃģnimo
-              </Text>
+              <Text>SinÃģnimo y AntÃģnimo</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -90,14 +80,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                Uso coloquial o regional
-              </Text>
+              <Text>Uso coloquial o regional</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -107,14 +93,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                SinÃģnimo y AntÃģnimo
-              </Text>
+              <Text>SinÃģnimo y AntÃģnimo</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -124,14 +106,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                Uso coloquial o regional
-              </Text>
+              <Text>Uso coloquial o regional</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -141,14 +119,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                SinÃģnimo y AntÃģnimo
-              </Text>
+              <Text>SinÃģnimo y AntÃģnimo</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -158,14 +132,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                Uso coloquial o regional
-              </Text>
+              <Text>Uso coloquial o regional</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -175,14 +145,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                SinÃģnimo y AntÃģnimo
-              </Text>
+              <Text>SinÃģnimo y AntÃģnimo</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -192,14 +158,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                Uso coloquial o regional
-              </Text>
+              <Text>Uso coloquial o regional</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -209,14 +171,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                SinÃģnimo y AntÃģnimo
-              </Text>
+              <Text>SinÃģnimo y AntÃģnimo</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -226,14 +184,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                Uso coloquial o regional
-              </Text>
+              <Text>Uso coloquial o regional</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -243,14 +197,10 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                SinÃģnimo y AntÃģnimo
-              </Text>
+              <Text>SinÃģnimo y AntÃģnimo</Text>
             </View>
           </View>
-          <View
-            style={styles.acordionCardLayout}
-          >
+          <View style={styles.acordionCardLayout}>
             <View
               style={styles.paLaBraTypo1}
               expanded={acordionCardElementSingleW5IsExpanded}
@@ -260,9 +210,7 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                Uso coloquial o regional
-              </Text>
+              <Text>Uso coloquial o regional</Text>
             </View>
           </View>
         </ScrollView>

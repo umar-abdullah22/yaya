@@ -6,7 +6,7 @@ import { styles } from '../../styles/about';
 import { LinearGradient } from 'expo-linear-gradient';
 import Footer from '../../components/Footer';
 
-const AboutUs = () => {
+const AboutUs = ({ navigation }) => {
   return (
     <View style={styles.aboutUs}>
       <View style={styles.mainHeaderWithLogo}>
@@ -22,9 +22,7 @@ const AboutUs = () => {
               locations={[0, 1]}
               colors={['rgba(0, 159, 232, 0.85)', 'rgba(0, 159, 232, 0.85)']}
             />
-            <View
-              style={styles.mainNavBar}
-            >
+            <View style={styles.mainNavBar}>
               <View style={styles.navManage}>
                 <Image
                   style={styles.image1Icon}
@@ -37,6 +35,7 @@ const AboutUs = () => {
                     mode="outlined"
                     btngoback="backscreenbutton"
                     contentStyle={styles.rectangleButtonBtn}
+                    onPress={() => navigation.goBack()}
                   >
                     {/* BackButton */}
                     <Text style={styles.atrsBtn}>Atrás</Text>
@@ -51,14 +50,10 @@ const AboutUs = () => {
             </View>
           </View>
         </View>
-      </View >
+      </View>
       <View style={styles.midSection}>
-
-        <ScrollView
-          style={styles.componentacordionlist}>
-          <Text
-            style={styles.aboutText}
-          >
+        <ScrollView style={styles.componentacordionlist}>
+          <Text style={styles.aboutText}>
             {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Morbi faucibus ligula non ornare tristique. Aenean ac 
 efficitur ante. Integer in lobortis elit. Fusce rhoncus libero 
