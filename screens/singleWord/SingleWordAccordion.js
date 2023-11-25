@@ -34,7 +34,17 @@ const SingleWordAccordion = ({ navigation }) => {
                   )
                 }
               >
-                <Text>Categoría gramatical</Text>
+                <View
+                style={styles.cardRow}>
+                <Text>
+                  Uso coloquial o regional
+                </Text>
+                <Image
+                  style={styles.arrowIcon}
+                  contentFit="cover"
+                  source={require('../../assets/arrowicon.png')}
+                />
+              </View>
               </View>
               <View style={styles.dropDownBox}>
                 <Text style={styles.dropDownText}>
@@ -61,7 +71,17 @@ const SingleWordAccordion = ({ navigation }) => {
                   )
                 }
               >
-                <Text>Categoría gramatical</Text>
+                <View
+                style={styles.cardRow}>
+                <Text>
+                  Uso coloquial o regional
+                </Text>
+                <Image
+                  style={styles.arrowIcon}
+                  contentFit="cover"
+                  source={require('../../assets/arrowicon.png')}
+                />
+              </View>
               </View>
               <View style={styles.dropDownBox}>
                 <Text style={styles.dropDownText}>
@@ -89,7 +109,17 @@ const SingleWordAccordion = ({ navigation }) => {
                 )
               }
             >
-              <Text>SinÃģnimo y AntÃģnimo</Text>
+              <View
+                style={styles.cardRow}>
+                <Text>
+                  Uso coloquial o regional
+                </Text>
+                <Image
+                  style={styles.arrowIcon}
+                  contentFit="cover"
+                  source={require('../../assets/arrowicon.png')}
+                />
+              </View>
             </View>
           </View>
           <View style={styles.acordionCardLayout}>
@@ -102,7 +132,17 @@ const SingleWordAccordion = ({ navigation }) => {
                 )
               }
             >
-              <Text>Significado denotativo</Text>
+              <View
+                style={styles.cardRow}>
+                <Text>
+                  Uso coloquial o regional
+                </Text>
+                <Image
+                  style={styles.arrowIcon}
+                  contentFit="cover"
+                  source={require('../../assets/arrowicon.png')}
+                />
+              </View>
             </View>
           </View>
         </ScrollView>

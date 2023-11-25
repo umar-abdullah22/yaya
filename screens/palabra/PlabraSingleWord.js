@@ -90,7 +90,17 @@ const PalabraSingleWord = ({ navigation }) => {
                 )
               }
             >
-              <Text>Uso coloquial o regional</Text>
+              <View
+                style={styles.cardRow}>
+                <Text>
+                  Uso coloquial o regional
+                </Text>
+                <Image
+                  style={styles.arrowIcon}
+                  contentFit="cover"
+                  source={require('../../assets/arrowicon.png')}
+                />
+              </View>
             </View>
           </View>
           <View style={styles.acordionCardLayout}>

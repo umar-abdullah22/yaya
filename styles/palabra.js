@@ -106,6 +106,6 @@ export const styles = StyleSheet.create({
     marginRight: 10,
     width: 20,
     height: 20,
-  }
+  },
 
 });

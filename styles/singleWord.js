@@ -64,6 +64,17 @@ export const styles = StyleSheet.create({
     fontFamily: FontFamily.interSemiBold,
     fontWeight: '600',
   },
+  cardRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  arrowIcon: {
+    marginRight: 10,
+    width: 20,
+    height: 20,
+  },
   dropDownBox: {
     backgroundColor: '#f6f6f6',
     paddingHorizontal: 20,
