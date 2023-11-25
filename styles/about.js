@@ -26,7 +26,9 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 1,
   },
-
+  componentacordionlist:{
+    zIndex: -3,
+  },
   mainNavBar: {
     width: '100%',
     position: 'absolute',
@@ -66,6 +68,9 @@ export const styles = StyleSheet.create({
     fontFamily: FontFamily.interSemiBold,
     fontWeight: '600',
     color: Color.colorBlack,
+  },
+  midSection:{
+    height: '46%',
   },
   titleRow: {
     marginTop: 210,

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { Image } from 'expo-image';
 import { Button } from 'react-native-paper';
 import { styles } from '../../styles/about';
@@ -52,10 +52,14 @@ const AboutUs = () => {
           </View>
         </View>
       </View >
-      <Text
-        style={styles.aboutText}
-      >
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      <View style={styles.midSection}>
+
+        <ScrollView
+          style={styles.componentacordionlist}>
+          <Text
+            style={styles.aboutText}
+          >
+            {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Morbi faucibus ligula non ornare tristique. Aenean ac 
 efficitur ante. Integer in lobortis elit. Fusce rhoncus libero 
 vitae consectetur accumsan. Aliquam et efficitur sem.
@@ -75,8 +79,27 @@ vitae consectetur accumsan. Aliquam et efficitur sem.
  Sed et urna vel quam auctor imperdiet nec sit amet dolor. 
 Nunc tincidunt, nisl sed condimentum volutpat, est lorem 
 hendrerit elit, ut pulvinar tortor nunc in mauris. Donec a
+ magna ligula.
+
+ Nullam pellentesque nulla vitae velit porttitor hendrerit.
+ Sed et urna vel quam auctor imperdiet nec sit amet dolor. 
+Nunc tincidunt, nisl sed condimentum volutpat, est lorem 
+hendrerit elit, ut pulvinar tortor nunc in mauris. Donec a
+ magna ligula.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Morbi faucibus ligula non ornare tristique. Aenean ac 
+efficitur ante. Integer in lobortis elit. Fusce rhoncus libero 
+vitae consectetur accumsan. Aliquam et efficitur sem.
+
+ Nullam pellentesque nulla vitae velit porttitor hendrerit.
+ Sed et urna vel quam auctor imperdiet nec sit amet dolor. 
+Nunc tincidunt, nisl sed condimentum volutpat, est lorem 
+hendrerit elit, ut pulvinar tortor nunc in mauris. Donec a
  magna ligula.`}
-      </Text>
+          </Text>
+        </ScrollView>
+      </View>
       <Footer />
     </View>
   );
