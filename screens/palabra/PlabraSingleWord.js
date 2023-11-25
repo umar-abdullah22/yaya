@@ -73,9 +73,17 @@ const PalabraSingleWord = () => {
                 )
               }
             >
-              <Text>
-                SinÃģnimo y AntÃģnimo
-              </Text>
+              <View
+              style={styles.cardRow}>
+                <Text>
+                  SinÃģnimo y AntÃģnimo
+                </Text>
+                <Image
+                  style={styles.arrowIcon}
+                  contentFit="cover"
+                  source={require('../../assets/arrowicon.png')}
+                />
+              </View>
             </View>
           </View>
           <View
