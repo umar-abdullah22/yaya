@@ -1,7 +1,19 @@
 import { StyleSheet } from 'react-native';
-import { FontSize, Color, FontFamily } from '../GlobalStyles';
+import { Color, Border, FontFamily, FontSize } from '../GlobalStyles';
 
 export const styles = StyleSheet.create({
+  palabraSingleWord: {
+    backgroundColor: '#000',
+    maxWidth: 480,
+    height: "100%",
+    overflow: 'hidden',
+    width: '100%',
+  },
+
+
+
+
+  /*
   btnGoBackBtn: {
     color: '#000',
     fontSize: 12,
@@ -236,4 +248,5 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     width: '100%',
   },
+  */
 });

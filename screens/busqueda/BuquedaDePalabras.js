@@ -9,6 +9,8 @@ import PalabraText from '../../components/PalabraText';
 import { Image } from 'expo-image';
 import { Button } from 'react-native-paper';
 import { styles } from '../../styles/busqueda';
+import { LinearGradient } from 'expo-linear-gradient';
+import Footer from '../../components/Footer';
 
 const BusquedaDePalabras = () => {
   const [flatlist1Data, setFlatlist1Data] = useState([<PalabraText5 />]);
@@ -21,105 +23,105 @@ const BusquedaDePalabras = () => {
 
   return (
     <View style={styles.busquedaDePalabras}>
+      <View style={styles.mainHeaderWithLogo}>
+        <View style={[styles.heroLogo]}>
+          <View style={[styles.heroImageGradient]}>
+            <Image
+              style={styles.heroImage}
+              contentFit="fill"
+              source={require('../../assets/tainosintheriver-1.png')}
+            />
+            <LinearGradient
+              style={styles.headerLinearGradient}
+              locations={[0, 1]}
+              colors={['rgba(0, 159, 232, 0.85)', 'rgba(0, 159, 232, 0.85)']}
+            />
+            <View
+              style={styles.mainNavBar}
+            >
+              <View style={styles.navManage}>
+                <Image
+                  style={styles.image1Icon}
+                  contentFit="cover"
+                  source={require('../../assets/logo.png')}
+                />
+                <View style={[styles.searchbarLayout]}>
+                  <Button
+                    style={styles.btngoback}
+                    mode="outlined"
+                    btngoback="backscreenbutton"
+                    contentStyle={styles.rectangleButtonBtn}
+                  >
+                    {/* BackButton */}
+                    <Text style={styles.atrsBtn}>Atrás</Text>
+                  </Button>
+                </View>
+              </View>
+              <View style={styles.searchBarRow}>
+                <View style={styles.searchbar}>
+                  <TextInput
+                    style={styles.searchbar1}
+                    value={searchBarTextInput}
+                    onChangeText={setSearchBarTextInput}
+                    placeholder="Escribir palabra..."
+                    secureTextEntry={false}
+                  />
+                </View>
+                <View style={styles.searchbuttoncomponent}>
+                  <Button
+                    style={styles.searchButton}
+                    mode="outlined"
+                    labelStyle={styles.searchButtonBtn}
+                  >
+                    Buscar
+                  </Button>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View >
       <View
-        style={[styles.searchresultcards, styles.bnackgroundPosition]}
+        style={styles.searchresultcards}
         showsVerticalScrollIndicator={true}
         showsHorizontalScrollIndicator={true}
         contentContainerStyle={styles.searchResultCardsScrollViewContent}
       >
-        <FlatList
-          style={styles.flatlistLayout}
-          data={flatlist1Data}
-          renderItem={({ item }) => item}
-        />
-        <FlatList
-          style={[styles.flatlist2, styles.flatlistLayout]}
-          data={flatlist2Data}
-          renderItem={({ item }) => item}
-        />
-        <FlatList
-          style={[styles.flatlist2, styles.flatlistLayout]}
-          data={flatlist3Data}
-          renderItem={({ item }) => item}
-        />
-        <FlatList
-          style={[styles.flatlist2, styles.flatlistLayout]}
-          data={flatlist4Data}
-          renderItem={({ item }) => item}
-        />
-        <FlatList
-          style={[styles.flatlist2, styles.flatlistLayout]}
-          data={flatlist5Data}
-          renderItem={({ item }) => item}
-        />
-        <FlatList
-          style={[styles.flatlist2, styles.flatlistLayout]}
-          data={flatlist6Data}
-          renderItem={({ item }) => item}
-        />
-      </View>
-      <View style={[styles.googleAds, styles.frameLayout]}>
-        <View style={[styles.frame, styles.frameLayout]}>
-          <View style={styles.frameChild} />
-        </View>
-        <View style={styles.googleAdsChild} />
-        <View style={styles.frame1}>
-          <Text style={styles.anuncioDeGoogle}>Anuncio de Google</Text>
+        <View>
+          <FlatList
+            style={styles.flatlistLayout}
+            data={flatlist1Data}
+            renderItem={({ item }) => item}
+          />
+          <FlatList
+            style={styles.flatlistLayout}
+            data={flatlist2Data}
+            renderItem={({ item }) => item}
+          />
+          <FlatList
+            style={styles.flatlistLayout}
+            data={flatlist3Data}
+            renderItem={({ item }) => item}
+          />
+          <FlatList
+            style={styles.flatlistLayout}
+            data={flatlist4Data}
+            renderItem={({ item }) => item}
+          />
+          <FlatList
+            style={styles.flatlistLayout}
+            data={flatlist5Data}
+            renderItem={({ item }) => item}
+          />
+          <FlatList
+            style={styles.flatlistLayout}
+            data={flatlist6Data}
+            renderItem={({ item }) => item}
+          />
         </View>
       </View>
-      <View style={[styles.bnackground, styles.bnackgroundPosition]}>
-        <Image
-          style={[styles.bnackground, styles.bnackgroundPosition]}
-          contentFit="cover"
-          source={require('../../assets/tainosintheriver-1.png')}
-        />
-        <Image
-          style={[styles.bnackground, styles.bnackgroundPosition]}
-          contentFit="cover"
-          source={require('../../assets/rectangle-5.png')}
-        />
-      </View>
-      <View style={[styles.searchbuttoncomponent, styles.searchbarLayout]}>
-        <Button
-          style={[styles.searchButton, styles.framePosition]}
-          mode="outlined"
-          labelStyle={styles.searchButtonBtn}
-          contentStyle={styles.searchButtonBtn1}
-        >
-          Buscar
-        </Button>
-      </View>
-      <View style={[styles.searchbar, styles.searchbarLayout]}>
-        <TextInput
-          style={[styles.searchbar1, styles.searchbar1Position]}
-          value={searchBarTextInput}
-          onChangeText={setSearchBarTextInput}
-          // placeholder="Escribir palabra..."
-          secureTextEntry={false}
-        />
-        <Text style={[styles.escribirPalabra, styles.atrsPosition]}>
-          Escribir palabra...
-        </Text>
-      </View>
-      <View style={[styles.btngoback, styles.searchbarLayout]}>
-        <Button
-          style={styles.searchbar1Position}
-          mode="outlined"
-          btngoback="backscreenbutton"
-          contentStyle={styles.rectangleButtonBtn}
-        >
-          {/* BackButton */}
-        </Button>
-        <Text style={[styles.atrs, styles.atrsPosition]}>Atrás</Text>
-      </View>
-      <View style={[styles.logo, styles.logoLayout]}>
-        <Image
-          style={[styles.image1Icon, styles.logoLayout]}
-          contentFit="cover"
-          source={require('../../assets/logo.png')}
-        />
-      </View>
-    </View>
+      <Footer />
+    </View >
   );
 };
 

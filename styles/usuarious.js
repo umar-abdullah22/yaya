@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   mainHeaderWithLogo: {
-    height: "50%",
+    // marginTop: 30,
+    height: '50%',
   },
   heroImage: {
     height: '100%',
@@ -27,10 +28,11 @@ export const styles = StyleSheet.create({
   },
   image1Icon: {
     position: 'absolute',
-    top: 30,
+    top: 20,
     left: 10,
     width: 92,
     height: 34,
+    zIndex: 2,
   },
   buttonpalabras: {
     marginTop: 40,

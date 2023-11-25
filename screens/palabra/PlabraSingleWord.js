@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Image } from 'expo-image';
 import { View, Text } from 'react-native';
-import { Button, List } from 'react-native-paper';
 import { styles } from '../../styles/palabra';
+import { Header } from '../../components/Header';
+import { Button, List } from 'react-native-paper';
+import { Image } from 'expo-image';
+
 
 const PalabraSingleWord = () => {
   const [
@@ -32,29 +34,8 @@ const PalabraSingleWord = () => {
 
   return (
     <View style={styles.palabraSingleWord}>
-      <View
-        style={[
-          styles.headermainsingleword,
-          styles.headermainsinglewordPosition,
-        ]}
-      >
-        <Image
-          style={[styles.tainosInTheRiver1Icon, styles.iconLayout3]}
-          contentFit="cover"
-          source={require('../../assets/tainosintheriver-1.png')}
-        />
-        <View
-          style={[
-            styles.headermainsinglewordChild,
-            styles.tainosInTheRiver1IconPosition,
-          ]}
-        />
-        <Image
-          style={styles.logoIcon}
-          contentFit="cover"
-          source={require('../../assets/logo.png')}
-        />
-      </View>
+      
+      <Header />
       <Text style={styles.tittleSelectedWord}>Tittle Selected Word</Text>
       <View style={styles.palabraSingleWordChild} />
       <Button

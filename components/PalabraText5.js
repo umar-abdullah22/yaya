@@ -8,9 +8,9 @@ const PalabraText5 = ({ style }) => {
 
 const styles = StyleSheet.create({
   palabra: {
-    fontSize: FontSize.size_sm,
-    fontWeight: "600",
-    fontFamily: FontFamily.interSemiBold,
+    fontSize: 16,
+    fontStyle: 'normal',
+    fontWeight: '600',
     color: Color.colorBlack,
     textAlign: "left",
     width: 121,
