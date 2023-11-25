@@ -81,11 +81,11 @@ const BusquedaDePalabras = () => {
           </View>
         </View>
       </View >
+      <View
+       style={styles.midSection}
+       >
         <ScrollView
           style={styles.searchresultcards}
-          showsVerticalScrollIndicator={true}
-          showsHorizontalScrollIndicator={true}
-          contentContainerStyle={styles.searchResultCardsScrollViewContent}
         >
           <View
             style={styles.flatlistLayout}>
@@ -111,7 +111,17 @@ const BusquedaDePalabras = () => {
             style={styles.flatlistLayout}>
             <PalabraText5 />
           </View>
-      </ScrollView>
+          <View
+            style={styles.flatlistLayout}>
+            <PalabraText4 />
+          </View>
+          <View
+            style={styles.flatlistLayout}>
+            <PalabraText5 />
+          </View>
+
+        </ScrollView>
+      </View>
       <Footer />
     </View >
   );

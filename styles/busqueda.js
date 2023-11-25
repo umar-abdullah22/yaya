@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   mainHeaderWithLogo: {
-    height: "40%",
+    height:  350,
   },
   heroImage: {
     height: 350,
@@ -104,6 +104,9 @@ export const styles = StyleSheet.create({
     color: '#000',
     borderRadius: 3,
   },
+  midSection:{
+    height: '52%',
+  },
 
   flatlistLayout: {
     marginTop: 20,
@@ -123,22 +126,13 @@ export const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '600',
   },
-  searchResultCardsScrollViewContent: {
-    flexDirection: 'column',
-    paddingHorizontal: 50,
-    paddingVertical: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   searchresultcards: {
-    marginTop: 40,
-    paddingBottom: 30,
+    marginTop: 20,
     backgroundColor: '#f6f6f6',
     maxWidth: '100%',
     overflow: 'hidden',
     width: '100%',
     marginRight: 'auto',
     marginLeft: 'auto',
-    zIndex: -2,
   },
 });

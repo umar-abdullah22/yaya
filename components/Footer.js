@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     width: '100%',
     position: 'absolute',
     bottom: 0,
-    zIndex: 1,
+    zIndex: -1,
   },
   frameChild: {
     backgroundColor: '#083649',
