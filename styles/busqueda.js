@@ -105,7 +105,7 @@ export const styles = StyleSheet.create({
     borderRadius: 3,
   },
   midSection:{
-    height: '52%',
+    height: '46%',
   },
 
   flatlistLayout: {
@@ -127,7 +127,6 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
   },
   searchresultcards: {
-    marginTop: 20,
     backgroundColor: '#f6f6f6',
     maxWidth: '100%',
     overflow: 'hidden',
