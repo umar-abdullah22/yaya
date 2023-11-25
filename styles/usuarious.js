@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
   },
   image1Icon: {
     position: 'absolute',
-    top: 20,
+    top: 24,
     left: "4%",
     width: 92,
     height: 34,

@@ -64,12 +64,13 @@ export const styles = StyleSheet.create({
   },
 
   searchBarRow: {
-    marginTop: "54%",
+    marginTop: 210,
     width: '86%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    gap: 19,
   },
   searchbar: {
     width: "72%",
