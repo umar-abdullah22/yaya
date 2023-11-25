@@ -81,6 +81,11 @@ export const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 30,
   },
+  cardheading: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  
   dropDownText: {
     fontSize: 14,
     lineHeight: 18,

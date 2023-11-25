@@ -36,7 +36,7 @@ const SingleWordAccordion = ({ navigation }) => {
               >
                 <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -73,7 +73,7 @@ const SingleWordAccordion = ({ navigation }) => {
               >
                 <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -111,7 +111,7 @@ const SingleWordAccordion = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -134,7 +134,7 @@ const SingleWordAccordion = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image

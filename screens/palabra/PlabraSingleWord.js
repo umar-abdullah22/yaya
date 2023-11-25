@@ -69,7 +69,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   SinÃģnimo y AntÃģnimo
                 </Text>
                 <Image
@@ -92,7 +92,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -115,7 +115,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   SinÃģnimo y AntÃģnimo
                 </Text>
                 <Image
@@ -138,7 +138,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -161,7 +161,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -184,7 +184,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -207,7 +207,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -230,7 +230,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -253,7 +253,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -276,7 +276,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -299,7 +299,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image
@@ -322,7 +322,7 @@ const PalabraSingleWord = ({ navigation }) => {
             >
               <View
                 style={styles.cardRow}>
-                <Text>
+                <Text style={styles.cardheading}>
                   Uso coloquial o regional
                 </Text>
                 <Image

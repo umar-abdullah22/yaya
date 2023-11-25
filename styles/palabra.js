@@ -107,5 +107,9 @@ export const styles = StyleSheet.create({
     width: 20,
     height: 20,
   },
+  cardheading: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
 
 });
