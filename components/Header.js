@@ -71,14 +71,14 @@ const styles = StyleSheet.create({
   mainNavBar: {
     width: '100%',
     position: 'absolute',
-    top: 10,
-    left: "3%",
-    right: "3%",
+    top: 20,
+    left: "4%",
+    right: "4%",
     zIndex: 2,
 
   },
   navManage: {
-    width: '94%',
+    width: '92%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

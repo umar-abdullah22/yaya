@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   image1Icon: {
     position: 'absolute',
     top: 20,
-    left: 10,
+    left: "4%",
     width: 92,
     height: 34,
     zIndex: 2,
