@@ -12,7 +12,7 @@ import { styles } from '../../styles/busqueda';
 import { LinearGradient } from 'expo-linear-gradient';
 import Footer from '../../components/Footer';
 
-const BusquedaDePalabras = () => {
+const BusquedaDePalabras = ({ navigation }) => {
   const [flatlist1Data, setFlatlist1Data] = useState([<PalabraText5 />]);
   const [flatlist2Data, setFlatlist2Data] = useState([<PalabraText4 />]);
   const [flatlist3Data, setFlatlist3Data] = useState([<PalabraText3 />]);
@@ -36,9 +36,7 @@ const BusquedaDePalabras = () => {
               locations={[0, 1]}
               colors={['rgba(0, 159, 232, 0.85)', 'rgba(0, 159, 232, 0.85)']}
             />
-            <View
-              style={styles.mainNavBar}
-            >
+            <View style={styles.mainNavBar}>
               <View style={styles.navManage}>
                 <Image
                   style={styles.image1Icon}
@@ -51,6 +49,7 @@ const BusquedaDePalabras = () => {
                     mode="outlined"
                     btngoback="backscreenbutton"
                     contentStyle={styles.rectangleButtonBtn}
+                    onPress={() => navigation.goBack()}
                   >
                     {/* BackButton */}
                     <Text style={styles.atrsBtn}>Atrás</Text>
@@ -80,50 +79,37 @@ const BusquedaDePalabras = () => {
             </View>
           </View>
         </View>
-      </View >
-      <View
-       style={styles.midSection}
-       >
-        <ScrollView
-          style={styles.searchresultcards}
-        >
-          <View
-            style={styles.flatlistLayout}>
+      </View>
+      <View style={styles.midSection}>
+        <ScrollView style={styles.searchresultcards}>
+          <View style={styles.flatlistLayout}>
             <PalabraText />
           </View>
-          <View
-            style={styles.flatlistLayout}>
+          <View style={styles.flatlistLayout}>
             <PalabraText1 />
           </View>
-          <View
-            style={styles.flatlistLayout}>
+          <View style={styles.flatlistLayout}>
             <PalabraText2 />
           </View>
-          <View
-            style={styles.flatlistLayout}>
+          <View style={styles.flatlistLayout}>
             <PalabraText3 />
           </View>
-          <View
-            style={styles.flatlistLayout}>
+          <View style={styles.flatlistLayout}>
             <PalabraText4 />
           </View>
-          <View
-            style={styles.flatlistLayout}>
+          <View style={styles.flatlistLayout}>
             <PalabraText5 />
           </View>
-          <View
-            style={styles.flatlistLayout}>
+          <View style={styles.flatlistLayout}>
             <PalabraText4 />
           </View>
-          <View
-            style={styles.flatlistLayout}>
+          <View style={styles.flatlistLayout}>
             <PalabraText5 />
           </View>
-
         </ScrollView>
       </View>
       <Footer />
-    </View >
+    </View>
   );
 };
 

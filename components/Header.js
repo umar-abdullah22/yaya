@@ -1,11 +1,14 @@
-import * as React from "react";
+import * as React from 'react';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
-import { View, Text, StyleSheet } from "react-native";
-import { FontSize, FontFamily, Color } from "../GlobalStyles";
+import { View, Text, StyleSheet } from 'react-native';
+import { FontSize, FontFamily, Color } from '../GlobalStyles';
 import { Button, List } from 'react-native-paper';
 
-const Header = ({ style }) => {
+const Header = ({ navigation }) => {
+  const goBack = () => {
+    navigation.goBack();
+  };
   return (
     <>
       <View style={styles.mainHeaderWithLogo}>
@@ -21,9 +24,7 @@ const Header = ({ style }) => {
               locations={[0, 1]}
               colors={['rgba(0, 159, 232, 0.85)', 'rgba(0, 159, 232, 0.85)']}
             />
-            <View
-              style={styles.mainNavBar}
-            >
+            <View style={styles.mainNavBar}>
               <View style={styles.navManage}>
                 <Image
                   style={styles.image1Icon}
@@ -35,21 +36,23 @@ const Header = ({ style }) => {
                   mode="outlined"
                   btngoback="backscreenbutton"
                   contentStyle={styles.rectangleButtonBtn}
+                  onPress={goBack}
                 >
                   {/* BackButton */}
-                  <Text style={styles.atrsBtn}>Atrás</Text>
+                  <Text style={styles.atrsBtn} onPress={goBack}>
+                    Atrás
+                  </Text>
                 </Button>
               </View>
             </View>
           </View>
         </View>
-      </View >
+      </View>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-
   mainHeaderWithLogo: {
     height: 240,
   },
@@ -72,10 +75,9 @@ const styles = StyleSheet.create({
     width: '100%',
     position: 'absolute',
     top: 20,
-    left: "4%",
-    right: "4%",
+    left: '4%',
+    right: '4%',
     zIndex: 2,
-
   },
   navManage: {
     width: '92%',

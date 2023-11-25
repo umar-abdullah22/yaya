@@ -7,7 +7,19 @@ import { Button as RNPButton } from 'react-native-paper';
 import { Button } from '@ui-kitten/components';
 import { styles } from '../../styles/usuarious';
 
-const UsuariosPantallaDeInicio = () => {
+const UsuariosPantallaDeInicio = ({ navigation }) => {
+  const navigateToAboutUs = () => {
+    navigation.navigate('AboutUs');
+  };
+
+  const navigateToAcademicOffers = () => {
+    navigation.navigate('AcademicOffers');
+  };
+
+  const navigateToBusquedaDePalabras = () => {
+    navigation.navigate('BusquedaDePalabras');
+  };
+
   return (
     <>
       <View style={styles.usuariosPantallaDeInicio}>
@@ -37,6 +49,7 @@ const UsuariosPantallaDeInicio = () => {
           mode="contained"
           labelStyle={styles.buttonPalabrasLabel}
           contentStyle={styles.buttonPalabrasContent}
+          onPress={navigateToBusquedaDePalabras}
         >
           Palabras
         </RNPButton>
@@ -45,6 +58,7 @@ const UsuariosPantallaDeInicio = () => {
           mode="contained"
           labelStyle={styles.buttonOfertasLabel}
           contentStyle={styles.buttonOfertasContent}
+          onPress={navigateToAcademicOffers}
         >
           Ofertas Académicas
         </RNPButton>
@@ -55,6 +69,7 @@ const UsuariosPantallaDeInicio = () => {
           titleStyle={styles.buttonAboutUsBtn}
           containerStyle={styles.buttonAboutUsBtn1}
           buttonStyle={styles.buttonAboutUsBtn2}
+          onPress={navigateToAboutUs}
         />
       </View>
       <View style={styles.frame}>
