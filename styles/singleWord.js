@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
   },
   dropDownText: {
     fontSize: 14,
-    lineHeight: 14,
+    lineHeight: 18,
     fontFamily: FontFamily.interRegular,
     color: Color.colorBlack,
   },

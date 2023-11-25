@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   mainHeaderWithLogo: {
-    // marginTop: 30,
     height: '50%',
   },
   heroImage: {
@@ -45,9 +44,9 @@ export const styles = StyleSheet.create({
   },
   buttonPalabrasLabel: {
     color: '#fff',
-    fontSize: 28,
-    marginTop: 11,
-    marginBottom: 11,
+    fontSize: 22,
+    marginTop: 16,
+    marginBottom: 16,
     fontWeight: '600',
     fontFamily: 'Inter-SemiBold',
     textTransform: 'capitalize',
@@ -68,9 +67,9 @@ export const styles = StyleSheet.create({
   },
   buttonOfertasLabel: {
     color: '#fff',
-    fontSize: 28,
-    marginTop: 11,
-    marginBottom: 11,
+    fontSize: 22,
+    marginTop: 16,
+    marginBottom: 16,
     fontWeight: '600',
     fontFamily: 'Inter-SemiBold',
     textTransform: 'capitalize',
@@ -82,7 +81,7 @@ export const styles = StyleSheet.create({
   },
   buttonAboutUsBtn: {
     color: '#000',
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: '600',
     fontFamily: 'Inter-SemiBold',
   },
@@ -91,8 +90,6 @@ export const styles = StyleSheet.create({
     width: '40%',
     marginLeft: 'auto',
     marginRight: 'auto',
-  },
-  buttonAboutUsBtn2: {
   },
   frame: {
     width: '100%',
