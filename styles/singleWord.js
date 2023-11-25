@@ -35,7 +35,10 @@ export const styles = StyleSheet.create({
     overflow: 'scroll',
     marginLeft: 'auto',
     marginRight: 'auto',
-    
+    zIndex: -1,
+  },
+  midSection:{
+    height: '53%',
   },
   acordionCardLayout: {
     marginTop: 8,
@@ -45,6 +48,13 @@ export const styles = StyleSheet.create({
     marginRight: 'auto',
   },
   paLaBraTypo1: {
+    marginTop: 8,
+    minHeight: 35,
+    width: 320,
+    paddingVertical: 10,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingLeft: 40,
     borderTopWidth: 1,
     borderLeftWidth: 1,
     borderRightWidth: 1,
