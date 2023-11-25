@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList, View, Text, TextInput } from 'react-native';
+import { FlatList, View, ScrollView, Text, TextInput } from 'react-native';
 import PalabraText5 from '../../components/PalabraText5';
 import PalabraText4 from '../../components/PalabraText4';
 import PalabraText3 from '../../components/PalabraText3';
@@ -81,45 +81,37 @@ const BusquedaDePalabras = () => {
           </View>
         </View>
       </View >
-      <View
-        style={styles.searchresultcards}
-        showsVerticalScrollIndicator={true}
-        showsHorizontalScrollIndicator={true}
-        contentContainerStyle={styles.searchResultCardsScrollViewContent}
-      >
-        <View>
-          <FlatList
-            style={styles.flatlistLayout}
-            data={flatlist1Data}
-            renderItem={({ item }) => item}
-          />
-          <FlatList
-            style={styles.flatlistLayout}
-            data={flatlist2Data}
-            renderItem={({ item }) => item}
-          />
-          <FlatList
-            style={styles.flatlistLayout}
-            data={flatlist3Data}
-            renderItem={({ item }) => item}
-          />
-          <FlatList
-            style={styles.flatlistLayout}
-            data={flatlist4Data}
-            renderItem={({ item }) => item}
-          />
-          <FlatList
-            style={styles.flatlistLayout}
-            data={flatlist5Data}
-            renderItem={({ item }) => item}
-          />
-          <FlatList
-            style={styles.flatlistLayout}
-            data={flatlist6Data}
-            renderItem={({ item }) => item}
-          />
-        </View>
-      </View>
+        <ScrollView
+          style={styles.searchresultcards}
+          showsVerticalScrollIndicator={true}
+          showsHorizontalScrollIndicator={true}
+          contentContainerStyle={styles.searchResultCardsScrollViewContent}
+        >
+          <View
+            style={styles.flatlistLayout}>
+            <PalabraText />
+          </View>
+          <View
+            style={styles.flatlistLayout}>
+            <PalabraText1 />
+          </View>
+          <View
+            style={styles.flatlistLayout}>
+            <PalabraText2 />
+          </View>
+          <View
+            style={styles.flatlistLayout}>
+            <PalabraText3 />
+          </View>
+          <View
+            style={styles.flatlistLayout}>
+            <PalabraText4 />
+          </View>
+          <View
+            style={styles.flatlistLayout}>
+            <PalabraText5 />
+          </View>
+      </ScrollView>
       <Footer />
     </View >
   );

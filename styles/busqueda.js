@@ -131,7 +131,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchresultcards: {
-    paddingTop: 20,
+    marginTop: 40,
     paddingBottom: 30,
     backgroundColor: '#f6f6f6',
     maxWidth: '100%',
