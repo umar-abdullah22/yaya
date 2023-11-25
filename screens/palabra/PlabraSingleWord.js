@@ -1,75 +1,67 @@
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import { styles } from '../../styles/palabra';
-import { Header } from '../../components/Header';
+import Header from '../../components/Header';
 import { Button, List } from 'react-native-paper';
 import { Image } from 'expo-image';
+import Footer from '../../components/Footer';
 
 
 const PalabraSingleWord = () => {
   const [
     acordionCardElementSingleWIsExpanded,
     setAcordionCardElementSingleWIsExpanded,
-  ] = useState(true);
+  ] = useState(false);
   const [
     acordionCardElementSingleW1IsExpanded,
     setAcordionCardElementSingleW1IsExpanded,
-  ] = useState(true);
+  ] = useState(false);
   const [
     acordionCardElementSingleW2IsExpanded,
     setAcordionCardElementSingleW2IsExpanded,
-  ] = useState(true);
+  ] = useState(false);
   const [
     acordionCardElementSingleW3IsExpanded,
     setAcordionCardElementSingleW3IsExpanded,
-  ] = useState(true);
+  ] = useState(false);
   const [
     acordionCardElementSingleW4IsExpanded,
     setAcordionCardElementSingleW4IsExpanded,
-  ] = useState(true);
+  ] = useState(false);
   const [
     acordionCardElementSingleW5IsExpanded,
     setAcordionCardElementSingleW5IsExpanded,
-  ] = useState(true);
+  ] = useState(false);
 
   return (
     <View style={styles.palabraSingleWord}>
-      
       <Header />
       <Text style={styles.tittleSelectedWord}>Tittle Selected Word</Text>
-      <View style={styles.palabraSingleWordChild} />
-      <Button
-        style={styles.btngoback}
-        mode="outlined"
-        labelStyle={styles.btnGoBackBtn}
-        contentStyle={styles.btnGoBackBtn1}
-      >
-        AtrÃĄs
-      </Button>
-      <View style={[styles.googleAds, styles.frameLayout]}>
-        <View style={[styles.frame, styles.frameLayout]}>
-          <View style={styles.frameChild} />
-        </View>
-        <View style={styles.googleAdsChild} />
-        <View style={styles.frame1}>
-          <Text style={[styles.anuncioDeGoogle, styles.paLaBraTypo]}>
-            Anuncio de Google
+      <View style={styles.breakLine}></View>
+      <View style={styles.voiceWord}>
+        <View style={styles.pronunciarRow}>
+          <Text style={styles.pronunciarStyling}>
+            Pronunciar
           </Text>
+          <Image
+            style={styles.voiceIcon}
+            contentFit="cover"
+            source={require('../../assets/plabra/voice-3.png')}
+          />
+        </View>
+        <View style={styles.divisionRow}>
+          <Text style={styles.divisionStyling}>División Silábica:</Text>
+          <Image
+            style={styles.voiceIcon}
+            contentFit="cover"
+            source={require('../../assets/plabra/voice-3.png')}
+          />
         </View>
       </View>
       <View
-        style={[
-          styles.componentacordionlist,
-          styles.headermainsinglewordPosition,
-        ]}
-      >
-        <Image
-          style={[styles.backgroundviewIcon, styles.iconLayout3]}
-          contentFit="cover"
-          source={require('../../assets/plabra/backgroundview.png')}
-        />
+        style={styles.componentacordionlist}>
         <View
-          style={[styles.acordionCardElementSingleW, styles.acordionCardLayout]}
+          style={styles.acordionCardLayout}
         >
           <List.Accordion
             style={styles.paLaBraTypo1}
@@ -84,10 +76,7 @@ const PalabraSingleWord = () => {
           />
         </View>
         <View
-          style={[
-            styles.acordionCardElementSingleW1,
-            styles.acordionCardPosition,
-          ]}
+          style={styles.acordionCardLayout}
         >
           <List.Accordion
             style={styles.paLaBraTypo1}
@@ -102,10 +91,7 @@ const PalabraSingleWord = () => {
           />
         </View>
         <View
-          style={[
-            styles.acordionCardElementSingleW2,
-            styles.acordionCardPosition,
-          ]}
+          style={styles.acordionCardLayout}
         >
           <List.Accordion
             style={styles.paLaBraTypo1}
@@ -120,10 +106,7 @@ const PalabraSingleWord = () => {
           />
         </View>
         <View
-          style={[
-            styles.acordionCardElementSingleW3,
-            styles.acordionCardLayout,
-          ]}
+          style={styles.acordionCardLayout}
         >
           <List.Accordion
             style={styles.paLaBraTypo1}
@@ -138,10 +121,7 @@ const PalabraSingleWord = () => {
           />
         </View>
         <View
-          style={[
-            styles.acordionCardElementSingleW4,
-            styles.acordionCardPosition,
-          ]}
+          style={styles.acordionCardLayout}
         >
           <List.Accordion
             style={styles.paLaBraTypo1}
@@ -156,10 +136,7 @@ const PalabraSingleWord = () => {
           />
         </View>
         <View
-          style={[
-            styles.acordionCardElementSingleW5,
-            styles.acordionCardPosition,
-          ]}
+          style={styles.acordionCardLayout}
         >
           <List.Accordion
             style={styles.paLaBraTypo1}
@@ -174,29 +151,7 @@ const PalabraSingleWord = () => {
           />
         </View>
       </View>
-      <View style={styles.voiceWord}>
-        <View style={styles.talkSilabicWords1}>
-          <Text style={[styles.divisinSilbica, styles.paLaBraTypo]}>
-            DivisiÃģn SilÃĄbica:
-          </Text>
-          <Text style={[styles.paLaBra, styles.paLaBraTypo]}>Pa. la. bra.</Text>
-          <Image
-            style={[styles.voice3Icon, styles.iconLayout]}
-            contentFit="cover"
-            source={require('../../assets/plabra/voice-3.png')}
-          />
-        </View>
-        <View style={[styles.pronounsno1, styles.iconLayout]}>
-          <Text style={[styles.pronunciar, styles.paLaBraTypo]}>
-            Pronunciar
-          </Text>
-          <Image
-            style={[styles.voice4Icon, styles.iconLayout]}
-            contentFit="cover"
-            source={require('../../assets/plabra/voice-3.png')}
-          />
-        </View>
-      </View>
+      <Footer />
     </View>
   );
 };

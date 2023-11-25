@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
 
   mainHeaderWithLogo: {
     height: "30%",
-    backgroundColor: '#000',
   },
   heroImage: {
     height: 240,
@@ -72,14 +71,14 @@ const styles = StyleSheet.create({
   mainNavBar: {
     width: '100%',
     position: 'absolute',
-    top: 30,
-    left: "5%",
-    right: "5%",
+    top: 10,
+    left: "3%",
+    right: "3%",
     zIndex: 2,
 
   },
   navManage: {
-    width: '90%',
+    width: '94%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
