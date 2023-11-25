@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   mainHeaderWithLogo: {
-    height: "40%",
+    height:  350,
   },
   heroImage: {
     height: 350,
@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
     color: Color.colorBlack,
   },
   titleRow: {
-    marginTop: "54%",
+    marginTop: 210,
     width: '86%',
     display: 'flex',
     flexDirection: 'row',
