@@ -67,6 +67,10 @@ const AcademicOffers = ({ navigation }) => {
         <View style={{ flex: 1, justifyContent: 'center' }}>
           <ActivityIndicator size={'large'} />
         </View>
+      ) : !image ? (
+        <View style={{ flex: 1, justifyContent: 'center' }}>
+          <ActivityIndicator size={'large'} />
+        </View>
       ) : (
         <View style={styles.mainAcademicContainer}>
           <ImageBackground
