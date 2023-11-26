@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { StyleProp, ViewStyle, Text, StyleSheet } from 'react-native';
-import { FontSize, FontFamily, Color } from '../GlobalStyles';
+import { Text, StyleSheet } from 'react-native';
+import { Color } from '../GlobalStyles';
 
 const PalabraText = ({ style, text }) => {
   return <Text style={[styles.palabra, style]}>{text}</Text>;

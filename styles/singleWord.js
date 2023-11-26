@@ -2,11 +2,10 @@ import { StyleSheet } from 'react-native';
 import { Color, FontSize, FontFamily } from '../GlobalStyles';
 
 export const styles = StyleSheet.create({
-
   singleWordAccordion: {
     backgroundColor: '#fff',
     maxWidth: 480,
-    height: "100%",
+    height: '100%',
     overflow: 'hidden',
     width: '100%',
   },
@@ -37,7 +36,7 @@ export const styles = StyleSheet.create({
     marginRight: 'auto',
     zIndex: -1,
   },
-  midSection:{
+  midSection: {
     height: '53%',
   },
   acordionCardLayout: {
@@ -75,22 +74,22 @@ export const styles = StyleSheet.create({
     width: 20,
     height: 20,
   },
+  cardheading: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+
   dropDownBox: {
     backgroundColor: '#f6f6f6',
     paddingHorizontal: 20,
     paddingTop: 10,
     paddingBottom: 30,
   },
-  cardheading: {
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  
+
   dropDownText: {
     fontSize: 14,
     lineHeight: 18,
     fontFamily: FontFamily.interRegular,
     color: Color.colorBlack,
   },
-
 });

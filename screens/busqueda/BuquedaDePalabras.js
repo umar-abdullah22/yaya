@@ -5,6 +5,7 @@ import {
   Text,
   TextInput,
   ActivityIndicator,
+  TouchableOpacity,
 } from 'react-native';
 import PalabraText from '../../components/PalabraText';
 import { Image } from 'expo-image';
@@ -30,7 +31,7 @@ const BusquedaDePalabras = ({ navigation }) => {
           (item) => item.slug !== 'prueba-oferta-academica-1'
         );
         setAllData(nonAcademicOffers);
-        setFilteredData(nonAcademicOffers); // Initially display all data
+        setFilteredData(nonAcademicOffers);
         setLoading(false);
       })
       .catch((error) => {
@@ -46,6 +47,10 @@ const BusquedaDePalabras = ({ navigation }) => {
         .includes(searchQuery.toLowerCase())
     );
     setFilteredData(filtered);
+  };
+
+  const handleWordClick = (wordData) => {
+    navigation.navigate('PalabraSingleWord', { wordData });
   };
 
   return (
@@ -116,9 +121,14 @@ const BusquedaDePalabras = ({ navigation }) => {
         <View style={styles.midSection}>
           <ScrollView style={styles.searchresultcards}>
             {filteredData.map((item, index) => (
-              <View key={index} style={styles.flatlistLayout}>
-                <PalabraText text={item.acf.division_silabica} />
-              </View>
+              <TouchableOpacity
+                key={index}
+                onPress={() => handleWordClick(item)}
+              >
+                <View key={index} style={styles.flatlistLayout}>
+                  <PalabraText text={item.acf.division_silabica} />
+                </View>
+              </TouchableOpacity>
             ))}
           </ScrollView>
         </View>

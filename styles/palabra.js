@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   palabraSingleWord: {
     backgroundColor: '#fff',
     maxWidth: 480,
-    height: "100%",
+    height: '100%',
     overflow: 'hidden',
     width: '100%',
   },
@@ -60,7 +60,7 @@ export const styles = StyleSheet.create({
     fontFamily: FontFamily.interSemiBold,
     fontWeight: '600',
     color: Color.colorBlack,
-  }, 
+  },
   voiceIcon: {
     width: 32,
     height: 28,
@@ -72,11 +72,26 @@ export const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     zIndex: -3,
-    
   },
-  midSection:{
+  midSection: {
     height: '44%',
   },
+  // acordionCardLayout: {
+  //   marginTop: 8,
+  //   minHeight: 35,
+  //   width: 320,
+  //   paddingVertical: 10,
+  //   marginLeft: 'auto',
+  //   marginRight: 'auto',
+  //   paddingLeft: 40,
+  //   borderTopWidth: 1,
+  //   borderLeftWidth: 1,
+  //   borderRightWidth: 1,
+  //   borderBottomWidth: 3,
+  //   borderColor: '#BCB0B0',
+  //   borderStyle: 'solid',
+  // },
+
   acordionCardLayout: {
     marginTop: 8,
     minHeight: 35,
@@ -84,7 +99,6 @@ export const styles = StyleSheet.create({
     paddingVertical: 10,
     marginLeft: 'auto',
     marginRight: 'auto',
-    paddingLeft: 40,
     borderTopWidth: 1,
     borderLeftWidth: 1,
     borderRightWidth: 1,
@@ -92,6 +106,7 @@ export const styles = StyleSheet.create({
     borderColor: '#BCB0B0',
     borderStyle: 'solid',
   },
+
   paLaBraTypo1: {
     fontFamily: FontFamily.interSemiBold,
     fontWeight: '600',
@@ -110,6 +125,19 @@ export const styles = StyleSheet.create({
   cardheading: {
     fontSize: 16,
     fontWeight: '600',
+    paddingLeft: 40,
+  },
+  dropDownBox: {
+    backgroundColor: '#f6f6f6',
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    paddingBottom: 30,
   },
 
+  dropDownText: {
+    fontSize: 14,
+    lineHeight: 18,
+    fontFamily: FontFamily.interRegular,
+    color: Color.colorBlack,
+  },
 });

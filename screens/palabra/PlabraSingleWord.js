@@ -1,36 +1,25 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { styles } from '../../styles/palabra';
 import Header from '../../components/Header';
-import { Button, List } from 'react-native-paper';
 import { Image } from 'expo-image';
 import Footer from '../../components/Footer';
+import * as Speech from 'expo-speech';
 
-const PalabraSingleWord = ({ navigation }) => {
-  const [
-    acordionCardElementSingleWIsExpanded,
-    setAcordionCardElementSingleWIsExpanded,
-  ] = useState(false);
-  const [
-    acordionCardElementSingleW1IsExpanded,
-    setAcordionCardElementSingleW1IsExpanded,
-  ] = useState(false);
-  const [
-    acordionCardElementSingleW2IsExpanded,
-    setAcordionCardElementSingleW2IsExpanded,
-  ] = useState(false);
-  const [
-    acordionCardElementSingleW3IsExpanded,
-    setAcordionCardElementSingleW3IsExpanded,
-  ] = useState(false);
-  const [
-    acordionCardElementSingleW4IsExpanded,
-    setAcordionCardElementSingleW4IsExpanded,
-  ] = useState(false);
-  const [
-    acordionCardElementSingleW5IsExpanded,
-    setAcordionCardElementSingleW5IsExpanded,
-  ] = useState(false);
+const PalabraSingleWord = ({ navigation, route }) => {
+  const { wordData } = route.params;
+
+  const [expandedSection, setExpandedSection] = useState(null);
+
+  const handleAccordionPress = (section) => {
+    setExpandedSection(expandedSection === section ? null : section);
+  };
+
+  const speak = () => {
+    Speech.speak(wordData.acf.division_silabica, {
+      language: 'es-ES',
+    });
+  };
 
   return (
     <View style={styles.palabraSingleWord}>
@@ -40,298 +29,171 @@ const PalabraSingleWord = ({ navigation }) => {
       <View style={styles.voiceWord}>
         <View style={styles.pronunciarRow}>
           <Text style={styles.pronunciarStyling}>Pronunciar</Text>
-          <Image
-            style={styles.voiceIcon}
-            contentFit="cover"
-            source={require('../../assets/plabra/voice-3.png')}
-          />
+          <TouchableOpacity onPress={speak}>
+            <Image
+              style={styles.voiceIcon}
+              contentFit="cover"
+              source={require('../../assets/plabra/voice-3.png')}
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.divisionRow}>
           <Text style={styles.divisionStyling}>División Silábica:</Text>
-          <Image
-            style={styles.voiceIcon}
-            contentFit="cover"
-            source={require('../../assets/plabra/voice-3.png')}
-          />
+          <TouchableOpacity onPress={speak}>
+            <Image
+              style={styles.voiceIcon}
+              contentFit="cover"
+              source={require('../../assets/plabra/voice-3.png')}
+            />
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.midSection}>
         <ScrollView style={styles.componentacordionlist}>
           <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  SinÃģnimo y AntÃģnimo
-                </Text>
+            <TouchableOpacity onPress={() => handleAccordionPress('gramatica')}>
+              <View style={styles.cardRow}>
+                <Text style={styles.cardheading}>Categoría gramatical</Text>
                 <Image
                   style={styles.arrowIcon}
                   contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
+                  source={
+                    expandedSection === 'gramatica'
+                      ? require('../../assets/arrowicon.png')
+                      : require('../../assets/arrow_invert.png')
+                  }
                 />
               </View>
-            </View>
+              {expandedSection === 'gramatica' && (
+                <View style={styles.dropDownBox}>
+                  <Text style={styles.dropDownText}>
+                    {wordData.acf.categoria_gramatical}
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
           </View>
           <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
+            <TouchableOpacity
+              onPress={() => handleAccordionPress('denotativo')}
             >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
+              <View style={styles.cardRow}>
+                <Text style={styles.cardheading}>Significado denotativo</Text>
                 <Image
                   style={styles.arrowIcon}
                   contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
+                  source={
+                    expandedSection === 'denotativo'
+                      ? require('../../assets/arrowicon.png')
+                      : require('../../assets/arrow_invert.png')
+                  }
                 />
               </View>
-            </View>
+              {expandedSection === 'denotativo' && (
+                <View style={styles.dropDownBox}>
+                  <Text style={styles.dropDownText}>
+                    {wordData.acf.significado_denotativo}
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
           </View>
           <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
+            <TouchableOpacity
+              onPress={() => handleAccordionPress('connotativo')}
             >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  SinÃģnimo y AntÃģnimo
-                </Text>
+              <View style={styles.cardRow}>
+                <Text style={styles.cardheading}>Significado connotativo</Text>
                 <Image
                   style={styles.arrowIcon}
                   contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
+                  source={
+                    expandedSection === 'connotativo'
+                      ? require('../../assets/arrowicon.png')
+                      : require('../../assets/arrow_invert.png')
+                  }
                 />
               </View>
-            </View>
+              {expandedSection === 'connotativo' && (
+                <View style={styles.dropDownBox}>
+                  <Text style={styles.dropDownText}>
+                    {wordData.acf.significado_connotativo}
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.acordionCardLayout}>
+            <TouchableOpacity
+              onPress={() => handleAccordionPress('Etimología')}
+            >
+              <View style={styles.cardRow}>
+                <Text style={styles.cardheading}>Etimología</Text>
+                <Image
+                  style={styles.arrowIcon}
+                  contentFit="cover"
+                  source={
+                    expandedSection === 'Etimología'
+                      ? require('../../assets/arrowicon.png')
+                      : require('../../assets/arrow_invert.png')
+                  }
+                />
+              </View>
+              {expandedSection === 'Etimología' && (
+                <View style={styles.dropDownBox}>
+                  <Text style={styles.dropDownText}>
+                    {wordData.acf.etimologia}
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
           </View>
           <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
+            <TouchableOpacity onPress={() => handleAccordionPress('regional')}>
+              <View style={styles.cardRow}>
+                <Text style={styles.cardheading}>Uso coloquial o regional</Text>
                 <Image
                   style={styles.arrowIcon}
                   contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
+                  source={
+                    expandedSection === 'regional'
+                      ? require('../../assets/arrowicon.png')
+                      : require('../../assets/arrow_invert.png')
+                  }
                 />
               </View>
-            </View>
+              {expandedSection === 'regional' && (
+                <View style={styles.dropDownBox}>
+                  <Text style={styles.dropDownText}>
+                    {wordData.acf.uso_coloquial_o_regional}
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
           </View>
           <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
+            <TouchableOpacity onPress={() => handleAccordionPress('Antónimo')}>
+              <View style={styles.cardRow}>
+                <Text style={styles.cardheading}>Sinónimo y Antónimo</Text>
                 <Image
                   style={styles.arrowIcon}
                   contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
+                  source={
+                    expandedSection === 'Antónimo'
+                      ? require('../../assets/arrowicon.png')
+                      : require('../../assets/arrow_invert.png')
+                  }
                 />
               </View>
-            </View>
-          </View>
-          <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
-                <Image
-                  style={styles.arrowIcon}
-                  contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
-                />
-              </View>
-            </View>
-          </View>
-          <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
-                <Image
-                  style={styles.arrowIcon}
-                  contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
-                />
-              </View>
-            </View>
-          </View>
-          <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
-                <Image
-                  style={styles.arrowIcon}
-                  contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
-                />
-              </View>
-            </View>
-          </View>
-          <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
-                <Image
-                  style={styles.arrowIcon}
-                  contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
-                />
-              </View>
-            </View>
-          </View>
-          <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
-                <Image
-                  style={styles.arrowIcon}
-                  contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
-                />
-              </View>
-            </View>
-          </View>
-          <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
-                <Image
-                  style={styles.arrowIcon}
-                  contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
-                />
-              </View>
-            </View>
-          </View>
-          <View style={styles.acordionCardLayout}>
-            <View
-              style={styles.paLaBraTypo1}
-              expanded={acordionCardElementSingleW5IsExpanded}
-              onPress={() =>
-                setAcordionCardElementSingleW1IsExpanded(
-                  !acordionCardElementSingleW1IsExpanded
-                )
-              }
-            >
-              <View
-                style={styles.cardRow}>
-                <Text style={styles.cardheading}>
-                  Uso coloquial o regional
-                </Text>
-                <Image
-                  style={styles.arrowIcon}
-                  contentFit="cover"
-                  source={require('../../assets/arrowicon.png')}
-                />
-              </View>
-            </View>
+              {expandedSection === 'Antónimo' && (
+                <View style={styles.dropDownBox}>
+                  <Text style={styles.dropDownText}>
+                    {wordData.acf.sinonimo_y_antonimo}
+                  </Text>
+                </View>
+              )}
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>

@@ -7,14 +7,28 @@ import {
   Linking,
   ActivityIndicator,
 } from 'react-native';
-import { Image } from 'expo-image';
-import { Button } from 'react-native-paper';
 import { styles } from '../../styles/academic';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 const AcademicOffers = ({ navigation }) => {
   const [academicOffer, setAcademicOffer] = React.useState(null);
+  const [image, setImage] = React.useState(null);
+
+  const fetchImageData = (imageId) => {
+    try {
+      fetch(
+        `https://yayaappbackend-wordpress.server.highranknetwork.com/wp-json/wp/v2/media/${imageId}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setImage(data.source_url);
+        });
+    } catch (error) {
+      console.error('Error fetching image data:', error);
+      return null;
+    }
+  };
 
   React.useEffect(() => {
     fetch(
@@ -25,6 +39,7 @@ const AcademicOffers = ({ navigation }) => {
         const offer = data.find(
           (post) => post.slug === 'prueba-oferta-academica-1'
         );
+        fetchImageData(offer.acf.imagen_publicitaria);
         setAcademicOffer(offer);
       })
       .catch((error) => {
@@ -57,7 +72,7 @@ const AcademicOffers = ({ navigation }) => {
           <ImageBackground
             style={styles.academicImage}
             resizeMode="cover"
-            source={require('../../assets/academic/publicidad11.png')}
+            source={{ uri: image }}
           />
           <TouchableOpacity
             onPress={() =>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button as RNEButton } from '@rneui/themed';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Button as RNPButton } from 'react-native-paper';
