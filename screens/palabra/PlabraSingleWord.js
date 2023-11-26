@@ -24,7 +24,9 @@ const PalabraSingleWord = ({ navigation, route }) => {
   return (
     <View style={styles.palabraSingleWord}>
       <Header navigation={navigation} />
-      <Text style={styles.tittleSelectedWord}>Tittle Selected Word</Text>
+      <Text style={styles.tittleSelectedWord}>
+        {wordData.acf.division_silabica}
+      </Text>
       <View style={styles.breakLine}></View>
       <View style={styles.voiceWord}>
         <View style={styles.pronunciarRow}>
