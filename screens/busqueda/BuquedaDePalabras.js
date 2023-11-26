@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { FlatList, View, ScrollView, Text, TextInput } from 'react-native';
-import PalabraText5 from '../../components/PalabraText5';
-import PalabraText4 from '../../components/PalabraText4';
-import PalabraText3 from '../../components/PalabraText3';
-import PalabraText2 from '../../components/PalabraText2';
-import PalabraText1 from '../../components/PalabraText1';
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  ScrollView,
+  Text,
+  TextInput,
+  ActivityIndicator,
+} from 'react-native';
 import PalabraText from '../../components/PalabraText';
 import { Image } from 'expo-image';
 import { Button } from 'react-native-paper';
@@ -13,13 +14,39 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Footer from '../../components/Footer';
 
 const BusquedaDePalabras = ({ navigation }) => {
-  const [flatlist1Data, setFlatlist1Data] = useState([<PalabraText5 />]);
-  const [flatlist2Data, setFlatlist2Data] = useState([<PalabraText4 />]);
-  const [flatlist3Data, setFlatlist3Data] = useState([<PalabraText3 />]);
-  const [flatlist4Data, setFlatlist4Data] = useState([<PalabraText2 />]);
-  const [flatlist5Data, setFlatlist5Data] = useState([<PalabraText1 />]);
-  const [flatlist6Data, setFlatlist6Data] = useState([<PalabraText />]);
-  const [searchBarTextInput, setSearchBarTextInput] = useState('');
+  const [allData, setAllData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(
+      'https://yayaappbackend-wordpress.server.highranknetwork.com/wp-json/wp/v2/posts'
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const nonAcademicOffers = data.filter(
+          (item) => item.slug !== 'prueba-oferta-academica-1'
+        );
+        setAllData(nonAcademicOffers);
+        setFilteredData(nonAcademicOffers); // Initially display all data
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching data: ', error);
+        setLoading(false);
+      });
+  }, []);
+
+  const handleSearch = () => {
+    const filtered = allData.filter((item) =>
+      item.acf.division_silabica
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    );
+    setFilteredData(filtered);
+  };
 
   return (
     <View style={styles.busquedaDePalabras}>
@@ -60,8 +87,8 @@ const BusquedaDePalabras = ({ navigation }) => {
                 <View style={styles.searchbar}>
                   <TextInput
                     style={styles.searchbar1}
-                    value={searchBarTextInput}
-                    onChangeText={setSearchBarTextInput}
+                    value={searchQuery}
+                    onChangeText={setSearchQuery}
                     placeholder="Escribir palabra..."
                     secureTextEntry={false}
                   />
@@ -71,6 +98,7 @@ const BusquedaDePalabras = ({ navigation }) => {
                     style={styles.searchButton}
                     mode="outlined"
                     labelStyle={styles.searchButtonBtn}
+                    onPress={handleSearch}
                   >
                     Buscar
                   </Button>
@@ -80,34 +108,22 @@ const BusquedaDePalabras = ({ navigation }) => {
           </View>
         </View>
       </View>
-      <View style={styles.midSection}>
-        <ScrollView style={styles.searchresultcards}>
-          <View style={styles.flatlistLayout}>
-            <PalabraText />
-          </View>
-          <View style={styles.flatlistLayout}>
-            <PalabraText1 />
-          </View>
-          <View style={styles.flatlistLayout}>
-            <PalabraText2 />
-          </View>
-          <View style={styles.flatlistLayout}>
-            <PalabraText3 />
-          </View>
-          <View style={styles.flatlistLayout}>
-            <PalabraText4 />
-          </View>
-          <View style={styles.flatlistLayout}>
-            <PalabraText5 />
-          </View>
-          <View style={styles.flatlistLayout}>
-            <PalabraText4 />
-          </View>
-          <View style={styles.flatlistLayout}>
-            <PalabraText5 />
-          </View>
-        </ScrollView>
-      </View>
+      {loading ? (
+        <View style={{ flex: 1, justifyContent: 'center' }}>
+          <ActivityIndicator size={'large'} />
+        </View>
+      ) : (
+        <View style={styles.midSection}>
+          <ScrollView style={styles.searchresultcards}>
+            {filteredData.map((item, index) => (
+              <View key={index} style={styles.flatlistLayout}>
+                <PalabraText text={item.acf.division_silabica} />
+              </View>
+            ))}
+          </ScrollView>
+        </View>
+      )}
+
       <Footer />
     </View>
   );

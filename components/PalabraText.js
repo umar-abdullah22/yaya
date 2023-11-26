@@ -1,9 +1,9 @@
-import * as React from "react";
-import { StyleProp, ViewStyle, Text, StyleSheet } from "react-native";
-import { FontSize, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react';
+import { StyleProp, ViewStyle, Text, StyleSheet } from 'react-native';
+import { FontSize, FontFamily, Color } from '../GlobalStyles';
 
-const PalabraText = ({ style }) => {
-  return <Text style={[styles.palabra, style]}>{`Palabra `}</Text>;
+const PalabraText = ({ style, text }) => {
+  return <Text style={[styles.palabra, style]}>{text}</Text>;
 };
 
 const styles = StyleSheet.create({
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '600',
     color: Color.colorBlack,
-    textAlign: "left",
+    textAlign: 'left',
     width: 121,
   },
 });
