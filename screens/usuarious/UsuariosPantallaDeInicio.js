@@ -63,7 +63,7 @@ const UsuariosPantallaDeInicio = ({ navigation }) => {
           Ofertas Académicas
         </RNPButton>
         <RNEButton
-          title="Sobre YAYA"
+          title="Sobre Nosotros"
           radius="5"
           type="clear"
           titleStyle={styles.buttonAboutUsBtn}

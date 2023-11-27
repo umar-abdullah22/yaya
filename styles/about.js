@@ -5,12 +5,12 @@ export const styles = StyleSheet.create({
   aboutUs: {
     backgroundColor: '#fff',
     maxWidth: 480,
-    height: "100%",
+    height: '100%',
     overflow: 'hidden',
     width: '100%',
   },
   mainHeaderWithLogo: {
-    height:  350,
+    height: 350,
   },
   heroImage: {
     height: 350,
@@ -26,17 +26,17 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 1,
   },
-  componentacordionlist:{
+  componentacordionlist: {
     zIndex: -3,
+    marginBottom: 20,
   },
   mainNavBar: {
     width: '100%',
     position: 'absolute',
     top: 30,
-    left: "5%",
-    right: "5%",
+    left: '5%',
+    right: '5%',
     zIndex: 2,
-
   },
   navManage: {
     width: '90%',
@@ -69,7 +69,7 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: Color.colorBlack,
   },
-  midSection:{
+  midSection: {
     height: '46%',
   },
   titleRow: {
@@ -87,5 +87,4 @@ export const styles = StyleSheet.create({
     fontFamily: FontFamily.interSemiBold,
     fontWeight: '600',
   },
-
 });
