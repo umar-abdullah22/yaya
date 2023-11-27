@@ -15,8 +15,8 @@ const PalabraSingleWord = ({ navigation, route }) => {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
-  const speak = () => {
-    Speech.speak(wordData.acf.division_silabica, {
+  const speak = (word) => {
+    Speech.speak(word, {
       language: 'es-ES',
     });
   };
@@ -24,14 +24,12 @@ const PalabraSingleWord = ({ navigation, route }) => {
   return (
     <View style={styles.palabraSingleWord}>
       <Header navigation={navigation} />
-      <Text style={styles.tittleSelectedWord}>
-        {wordData.acf.division_silabica}
-      </Text>
+      <Text style={styles.tittleSelectedWord}>{wordData.slug}</Text>
       <View style={styles.breakLine}></View>
       <View style={styles.voiceWord}>
         <View style={styles.pronunciarRow}>
           <Text style={styles.pronunciarStyling}>Pronunciar</Text>
-          <TouchableOpacity onPress={speak}>
+          <TouchableOpacity onPress={() => speak(wordData.slug)}>
             <Image
               style={styles.voiceIcon}
               contentFit="cover"
@@ -41,7 +39,9 @@ const PalabraSingleWord = ({ navigation, route }) => {
         </View>
         <View style={styles.divisionRow}>
           <Text style={styles.divisionStyling}>División Silábica:</Text>
-          <TouchableOpacity onPress={speak}>
+          <TouchableOpacity
+            onPress={() => speak(wordData.acf.division_silabica)}
+          >
             <Image
               style={styles.voiceIcon}
               contentFit="cover"

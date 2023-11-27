@@ -126,7 +126,7 @@ const BusquedaDePalabras = ({ navigation }) => {
                 onPress={() => handleWordClick(item)}
               >
                 <View key={index} style={styles.flatlistLayout}>
-                  <PalabraText text={item.acf.division_silabica} />
+                  <PalabraText text={item.slug} />
                 </View>
               </TouchableOpacity>
             ))}
