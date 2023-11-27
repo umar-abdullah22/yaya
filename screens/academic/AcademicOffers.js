@@ -6,28 +6,33 @@ import {
   TouchableOpacity,
   Linking,
   ActivityIndicator,
+  ScrollView,
 } from 'react-native';
 import { styles } from '../../styles/academic';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 const AcademicOffers = ({ navigation }) => {
-  const [academicOffer, setAcademicOffer] = React.useState(null);
-  const [image, setImage] = React.useState(null);
+  const [academicOffers, setAcademicOffers] = React.useState([]);
+  const [images, setImages] = React.useState({});
 
-  const fetchImageData = (imageId) => {
-    try {
-      fetch(
-        `https://yayaappbackend-wordpress.server.highranknetwork.com/wp-json/wp/v2/media/${imageId}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setImage(data.source_url);
-        });
-    } catch (error) {
-      console.error('Error fetching image data:', error);
-      return null;
-    }
+  const fetchImageData = (offers) => {
+    offers.forEach((offer) => {
+      try {
+        fetch(
+          `https://yayaappbackend-wordpress.server.highranknetwork.com/wp-json/wp/v2/media/${offer.acf.imagen_publicitaria}`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setImages((prevImages) => ({
+              ...prevImages,
+              [offer.id]: data.source_url,
+            }));
+          });
+      } catch (error) {
+        console.error('Error fetching image data:', error);
+      }
+    });
   };
 
   React.useEffect(() => {
@@ -36,9 +41,9 @@ const AcademicOffers = ({ navigation }) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        const offer = data.find((post) => post.categories[0] === 4);
-        fetchImageData(offer.acf.imagen_publicitaria);
-        setAcademicOffer(offer);
+        const offers = data.filter((post) => post.categories[0] === 4);
+        fetchImageData(offers);
+        setAcademicOffers(offers);
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
@@ -58,38 +63,37 @@ const AcademicOffers = ({ navigation }) => {
   return (
     <View style={styles.academicOffers}>
       <Header navigation={navigation} />
-      <Text style={styles.tittleSelectedWord}>
-        {academicOffer?.acf?.nombre_de_la_institucion}
-      </Text>
-      {!academicOffer ? (
-        <View style={{ flex: 1, justifyContent: 'center' }}>
-          <ActivityIndicator size={'large'} />
-        </View>
-      ) : !image ? (
-        <View style={{ flex: 1, justifyContent: 'center' }}>
-          <ActivityIndicator size={'large'} />
-        </View>
-      ) : (
-        <View style={styles.mainAcademicContainer}>
-          <ImageBackground
-            style={styles.academicImage}
-            resizeMode="cover"
-            source={{ uri: image }}
-          />
-          <TouchableOpacity
-            onPress={() =>
-              openURL(academicOffer?.acf?.enlace_hacia_la_oferta_academica_)
-            }
-          >
-            <View style={styles.academicText}>
-              <Text style={styles.conocerMsText}>Conocer más: </Text>
-              <Text style={styles.presionaAqu}>Presiona aquí</Text>
+      <ScrollView style={styles.scrollView}>
+        {academicOffers.length === 0 ? (
+          <View style={{ flex: 1, justifyContent: 'center' }}>
+            <ActivityIndicator size={'large'} />
+          </View>
+        ) : (
+          academicOffers.map((offer) => (
+            <View key={offer.id} style={styles.mainAcademicContainer}>
+              <Text style={styles.tittleSelectedWord}>
+                {offer.acf.nombre_de_la_institucion}
+              </Text>
+              <ImageBackground
+                style={styles.academicImage}
+                resizeMode="cover"
+                source={{ uri: images[offer.id] }}
+              />
+              <TouchableOpacity
+                onPress={() =>
+                  openURL(offer.acf?.enlace_hacia_la_oferta_academica_)
+                }
+              >
+                <View style={styles.academicText}>
+                  <Text style={styles.conocerMsText}>Conocer más: </Text>
+                  <Text style={styles.presionaAqu}>Presiona aquí</Text>
+                </View>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
-        </View>
-      )}
-
-      <Footer />
+          ))
+        )}
+      </ScrollView>
+      <Footer style={styles.footer} />
     </View>
   );
 };
