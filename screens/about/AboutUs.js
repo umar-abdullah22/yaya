@@ -56,14 +56,11 @@ const AboutUs = ({ navigation }) => {
           <Text style={styles.aboutText}>
             {`YAYA es una aplicación que surge para apoyar la formación  académica y profundizar el conocimiento de la lengua española, sea materna o no. Con YAYA podrás conocer aspectos fundamentales del español, como los fónicos, ortográficos, léxicos, semánticos y gramaticales. Esta aplicación mejora el uso de la lengua en contextos diversos, además, permite curiosear las palabras, motor principal del pensamiento complejo.
 
-
 La lengua materna está enlazada con la identidad cultural, con el conocimiento del mundo y permite que podamos perfilar los modos de conectar con otras lenguas a través del dominio del léxico y sus distintas variantes. 
-
 
 La lengua española es muy dinámica y diversa. Tiene una larga trayectoria que viajó en barcos por muchos mares y océanos para legarnos 23 academias que se encargan de investigar, recoger usos particulares e identificar las formas en que sus ciudadanos se comunican. 
 
  YAYA tiene como objetivo contribuir con el fortalecimiento de la lengua española en todos sus usos y vertientes a nivel mundial. Su aplicación general es un aporte a la educación y al aprendizaje, como motores imprescindibles en la formación del ser pensante.
-
 
 Su ideóloga es Rita Díaz Blanco, doctora en Mundo Hispánico, línea de morfosintaxis del español dominicano, de la Universidad de León, España. Es docente de la UASD y del ISFODOSU. Tiene maestría en Ciencias de la Educación (Universidad Abierta para Adultos), en Lingüística Aplicada (Universidad Autónoma de Santo Domingo) y Lexicografía Hispánica (Real Academia Española y la Universidad de León). Directora del Instituto Lingüístico Dominicano, miembro correspondiente de la Academia Dominicana de la Lengua y del Instituto Guzmán Ariza de Lexicografía (IGALEX).`}
           </Text>
