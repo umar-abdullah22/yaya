@@ -28,7 +28,7 @@ const BusquedaDePalabras = ({ navigation }) => {
       .then((response) => response.json())
       .then((data) => {
         const nonAcademicOffers = data.filter(
-          (item) => item.slug !== 'prueba-oferta-academica-1'
+          (item) => item.categories[0] === 1
         );
         setAllData(nonAcademicOffers);
         setFilteredData(nonAcademicOffers);

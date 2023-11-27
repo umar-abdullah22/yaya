@@ -36,9 +36,7 @@ const AcademicOffers = ({ navigation }) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        const offer = data.find(
-          (post) => post.slug === 'prueba-oferta-academica-1'
-        );
+        const offer = data.find((post) => post.categories[0] === 4);
         fetchImageData(offer.acf.imagen_publicitaria);
         setAcademicOffer(offer);
       })
