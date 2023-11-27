@@ -42,9 +42,7 @@ const BusquedaDePalabras = ({ navigation }) => {
 
   const handleSearch = () => {
     const filtered = allData.filter((item) =>
-      item.acf.division_silabica
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase())
+      item.slug.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredData(filtered);
   };
