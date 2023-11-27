@@ -56,6 +56,7 @@ export const styles = StyleSheet.create({
   },
   scrollView: {
     zIndex: -999,
+    marginBottom: 65,
   },
   footer: {
     position: 'absolute', // Ensure the footer is fixed at the bottom
