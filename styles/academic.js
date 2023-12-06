@@ -18,16 +18,14 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
   },
   mainAcademicContainer: {
-    marginTop: 9,
     width: '85%',
-    height: 202,
+    maxHeight: 400,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: 100, // Added margin at the bottom
-    marginTop: 15,
+    marginBottom: 20,
   },
   academicImage: {
-    height: '100%',
+    height: 202,
     width: '100%',
   },
   academicText: {
@@ -58,9 +56,5 @@ export const styles = StyleSheet.create({
     zIndex: -999,
     marginBottom: 65,
   },
-  footer: {
-    position: 'absolute', // Ensure the footer is fixed at the bottom
-    bottom: 0,
-    width: '100%',
-  },
+
 });

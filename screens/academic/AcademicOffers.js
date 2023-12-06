@@ -65,7 +65,7 @@ const AcademicOffers = ({ navigation }) => {
       <Header navigation={navigation} />
       <ScrollView style={styles.scrollView}>
         {academicOffers.length === 0 ? (
-          <View style={{ flex: 1, justifyContent: 'center' }}>
+          <View>
             <ActivityIndicator size={'large'} />
           </View>
         ) : (
