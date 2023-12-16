@@ -29,6 +29,14 @@ export const styles = StyleSheet.create({
     borderColor: '#0A97D1',
   },
 
+  redHeading: {
+    textAlign: 'center',
+    marginBottom: 10,
+    fontSize: 16,
+    color: "#9E0808",
+    fontWeight: '600',
+  },
+
   voiceWord: {
     width: '60%',
     marginLeft: 'auto',

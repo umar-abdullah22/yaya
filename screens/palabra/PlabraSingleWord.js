@@ -26,6 +26,7 @@ const PalabraSingleWord = ({ navigation, route }) => {
       <Header navigation={navigation} />
       <Text style={styles.tittleSelectedWord}>{wordData.slug}</Text>
       <View style={styles.breakLine}></View>
+      <Text style={styles.redHeading}>Bar bi cu</Text>
       <View style={styles.voiceWord}>
         <View style={styles.pronunciarRow}>
           <Text style={styles.pronunciarStyling}>Pronunciar</Text>
