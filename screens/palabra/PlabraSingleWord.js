@@ -26,9 +26,9 @@ const PalabraSingleWord = ({ navigation, route }) => {
       <Header navigation={navigation} />
       <Text style={styles.tittleSelectedWord}>{wordData.slug}</Text>
       <View style={styles.breakLine}></View>
-      <Text style={styles.redHeading}>Bar bi cu</Text>
+      <Text style={styles.redHeading}>{wordData.acf.division_silabica}</Text>
       <View style={styles.voiceWord}>
-        <View style={styles.pronunciarRow}>
+        {/* <View style={styles.pronunciarRow}>
           <Text style={styles.pronunciarStyling}>Pronunciar</Text>
           <TouchableOpacity onPress={() => speak(wordData.slug)}>
             <Image
@@ -37,7 +37,7 @@ const PalabraSingleWord = ({ navigation, route }) => {
               source={require('../../assets/plabra/voice-3.png')}
             />
           </TouchableOpacity>
-        </View>
+        </View> */}
         <View style={styles.divisionRow}>
           <Text style={styles.divisionStyling}>División Silábica:</Text>
           <TouchableOpacity
@@ -53,7 +53,7 @@ const PalabraSingleWord = ({ navigation, route }) => {
       </View>
       <View style={styles.midSection}>
         <ScrollView style={styles.componentacordionlist}>
-          <View style={styles.acordionCardLayout}>
+          {/* <View style={styles.acordionCardLayout}>
             <TouchableOpacity onPress={() => handleAccordionPress('gramatica')}>
               <View style={styles.cardRow}>
                 <Text style={styles.cardheading}>Categoría gramatical</Text>
@@ -75,7 +75,7 @@ const PalabraSingleWord = ({ navigation, route }) => {
                 </View>
               )}
             </TouchableOpacity>
-          </View>
+          </View> */}
           <View style={styles.acordionCardLayout}>
             <TouchableOpacity
               onPress={() => handleAccordionPress('denotativo')}

@@ -7,7 +7,7 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "build:ios":"expo build:ios"
+    "build:ios": "expo build:ios"
   },
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
@@ -40,7 +40,9 @@
     "react-native-reanimated": "~3.3.0",
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
-    "react-native-svg": "13.9.0"  },
+    "react-native-svg": "13.9.0",
+    "react-native-tts": "^4.1.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
