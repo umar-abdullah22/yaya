@@ -124,7 +124,7 @@ const BusquedaDePalabras = ({ navigation }) => {
                 onPress={() => handleWordClick(item)}
               >
                 <View key={index} style={styles.flatlistLayout}>
-                  <PalabraText text={item.slug} />
+                  <PalabraText text={item.title.rendered} />
                 </View>
               </TouchableOpacity>
             ))}

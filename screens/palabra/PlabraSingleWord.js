@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity,useWindowDimensions } from 'react-native';
 import { styles } from '../../styles/palabra';
 import Header from '../../components/Header';
 import { Image } from 'expo-image';
 import Footer from '../../components/Footer';
 import * as Speech from 'expo-speech';
+import RenderHTML from 'react-native-render-html';
+
 
 const PalabraSingleWord = ({ navigation, route }) => {
   const { wordData } = route.params;
+  const { width } = useWindowDimensions();
+
 
   const [expandedSection, setExpandedSection] = useState(null);
 
@@ -15,6 +19,11 @@ const PalabraSingleWord = ({ navigation, route }) => {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
+  const renderHtmlContent = (htmlContent) => {
+    return <RenderHTML contentWidth={width} source={{ html: htmlContent }} baseStyle={{fontSize:14,lineHeight:19}}/>;
+  };
+
+  
   const speak = (word) => {
     Speech.speak(word, {
       language: 'es-ES',
@@ -24,11 +33,11 @@ const PalabraSingleWord = ({ navigation, route }) => {
   return (
     <View style={styles.palabraSingleWord}>
       <Header navigation={navigation} />
-      <Text style={styles.tittleSelectedWord}>{wordData.slug}</Text>
+      <Text style={styles.tittleSelectedWord}>{wordData.title.rendered}</Text>
       <View style={styles.breakLine}></View>
       <Text style={styles.redHeading}>{wordData.acf.division_silabica}</Text>
       <View style={styles.voiceWord}>
-        {/* <View style={styles.pronunciarRow}>
+        <View style={styles.pronunciarRow}>
           <Text style={styles.pronunciarStyling}>Pronunciar</Text>
           <TouchableOpacity onPress={() => speak(wordData.slug)}>
             <Image
@@ -37,8 +46,8 @@ const PalabraSingleWord = ({ navigation, route }) => {
               source={require('../../assets/plabra/voice-3.png')}
             />
           </TouchableOpacity>
-        </View> */}
-        <View style={styles.divisionRow}>
+        </View>
+        {/* <View style={styles.divisionRow}>
           <Text style={styles.divisionStyling}>División Silábica:</Text>
           <TouchableOpacity
             onPress={() => speak(wordData.acf.division_silabica)}
@@ -49,7 +58,7 @@ const PalabraSingleWord = ({ navigation, route }) => {
               source={require('../../assets/plabra/voice-3.png')}
             />
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
       <View style={styles.midSection}>
         <ScrollView style={styles.componentacordionlist}>
@@ -94,9 +103,7 @@ const PalabraSingleWord = ({ navigation, route }) => {
               </View>
               {expandedSection === 'denotativo' && (
                 <View style={styles.dropDownBox}>
-                  <Text style={styles.dropDownText}>
-                    {wordData.acf.significado_denotativo}
-                  </Text>
+                    {renderHtmlContent(wordData.acf.significado_denotativo)}
                 </View>
               )}
             </TouchableOpacity>
@@ -119,9 +126,9 @@ const PalabraSingleWord = ({ navigation, route }) => {
               </View>
               {expandedSection === 'connotativo' && (
                 <View style={styles.dropDownBox}>
-                  <Text style={styles.dropDownText}>
-                    {wordData.acf.significado_connotativo}
-                  </Text>
+                  {/* <Text style={styles.dropDownText}> */}
+                    {renderHtmlContent(wordData.acf.significado_connotativo)}
+                  {/* </Text> */}
                 </View>
               )}
             </TouchableOpacity>
@@ -145,9 +152,9 @@ const PalabraSingleWord = ({ navigation, route }) => {
               </View>
               {expandedSection === 'Etimología' && (
                 <View style={styles.dropDownBox}>
-                  <Text style={styles.dropDownText}>
-                    {wordData.acf.etimologia}
-                  </Text>
+                  {/* <Text style={styles.dropDownText}> */}
+                    {renderHtmlContent(wordData.acf.etimologia)}
+                  {/* </Text> */}
                 </View>
               )}
             </TouchableOpacity>
@@ -168,9 +175,9 @@ const PalabraSingleWord = ({ navigation, route }) => {
               </View>
               {expandedSection === 'regional' && (
                 <View style={styles.dropDownBox}>
-                  <Text style={styles.dropDownText}>
-                    {wordData.acf.uso_coloquial_o_regional}
-                  </Text>
+                  {/* <Text style={styles.dropDownText}> */}
+                    {renderHtmlContent(wordData.acf.uso_coloquial_o_regional)}
+                  {/* </Text> */}
                 </View>
               )}
             </TouchableOpacity>
@@ -191,9 +198,9 @@ const PalabraSingleWord = ({ navigation, route }) => {
               </View>
               {expandedSection === 'Antónimo' && (
                 <View style={styles.dropDownBox}>
-                  <Text style={styles.dropDownText}>
-                    {wordData.acf.sinonimo_y_antonimo}
-                  </Text>
+                  {/* <Text style={styles.dropDownText}> */}
+                    {renderHtmlContent(wordData.acf.sinonimo_y_antonimo)}
+                  {/* </Text> */}
                 </View>
               )}
             </TouchableOpacity>
